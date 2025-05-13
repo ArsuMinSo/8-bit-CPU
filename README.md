@@ -52,16 +52,6 @@ Tento 8bitový procesor je navržen podle von Neumannovy architektury. Obsahuje 
 
 ---
 
-## **Adresování**
-
-| Typ        | Příklad   | Význam                                      |
-|------------|-----------|---------------------------------------------|
-| Immediate  | `LDA #10` | Načtení hodnoty 10 do registru A *(neimplementováno)* |
-| Direct     | `LDA $20` | Načtení hodnoty z adresy $20 do registru A |
-| Register   | `INC X`   | Přenos hodnot mezi registry *(neimplementováno)* |
-
----
-
 ## **Instrukční sada**
 
 | Binární     | Hex  | Mnemonik   | Formát | Popis                                  |
@@ -92,11 +82,3 @@ Nepoužité kódy (např. `0x50`–`0xC0`) jsou rezervované a zatím slouží j
 | `JMP $h`     | `Ep, Lm`            | `Cp, Er, Li, Cr`            | `Lc, Ei`            | `Cr`                | —                 | —          |
 | `OUT`        | `Ep, Lm`            | `Cp, Er, Li, Cr`            | `Ea, Lo`            | `Cr`                | —                 | —          |
 | `HLT`        | `Cr`                | —                           | —                   | —                   | —                 | —          |
-
-Pozn.: Hodnoty v závorce (např. `0x6000`) označují binární obraz signálů v řídicí matici, není nutné je používat přímo.
-
----
-
-## **Shrnutí**
-
-Tento procesor je didaktickým nástrojem, který umožňuje pochopení fungování základních částí procesoru – sběrnice, ALU, registrů a řízení instrukcí. Díky jednoduché instrukční sadě a řízení pomocí řadiče s ring counterem lze snadno analyzovat průběh jednotlivých instrukcí a jejich provedení.
